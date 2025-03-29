@@ -17,8 +17,8 @@ app.use(express.json());
 // CORS configuration
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://yourusername.github.io',
-  'https://yourusername.github.io/EmployWise_aaaignment'
+  'https://chuck-ankit.github.io',
+  'https://chuck-ankit.github.io/EmployWise_aaaignment'
 ];
 
 app.use(cors({
