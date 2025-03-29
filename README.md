@@ -186,6 +186,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Your Name - [@snobby_coder](https://x.com/snobby_coder) - ankitkumar9864@gmail.com
+Name - [@snobby_coder](https://x.com/snobby_coder) - ankitkumar9864@gmail.com
 
 Project Link: [https://github.com/chuck-ankit/EmployWise](https://github.com/chuck-ankit/EmployWise) 
