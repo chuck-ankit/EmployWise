@@ -1,6 +1,10 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { User } from '../models/User';
+import { User, IUser } from '../models/User';
+
+interface RequestWithUser extends Request {
+  user?: IUser;
+}
 
 const generateToken = (id: string) => {
   return jwt.sign({ id }, process.env.JWT_SECRET!, {
@@ -21,7 +25,7 @@ export const register = async (req: Request, res: Response) => {
       name,
       email,
       password,
-    });
+    }) as IUser;
 
     if (user) {
       res.status(201).json({
@@ -41,7 +45,7 @@ export const login = async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }) as IUser | null;
     if (!user) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
@@ -63,9 +67,9 @@ export const login = async (req: Request, res: Response) => {
   }
 };
 
-export const getProfile = async (req: Request, res: Response) => {
+export const getProfile = async (req: RequestWithUser, res: Response) => {
   try {
-    const user = await User.findById(req.user?._id).select('-password');
+    const user = await User.findById(req.user?._id).select('-password') as IUser | null;
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
