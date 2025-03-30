@@ -39,6 +39,11 @@ app.use(cors({
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 
+// Health check route
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'Server is running' });
+});
+
 // Error handling
 app.use(errorHandler);
 
