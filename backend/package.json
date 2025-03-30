@@ -11,7 +11,10 @@
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
     "prod:build": "npm run build && npm run lint",
-    "prod:start": "NODE_ENV=production node dist/app.js"
+    "prod:start": "NODE_ENV=production node dist/app.js",
+    "vercel-build": "npm run build",
+    "vercel-dev": "npm run dev",
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "",
