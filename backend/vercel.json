@@ -11,12 +11,5 @@
       "src": "/(.*)",
       "dest": "dist/app.js"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production",
-    "PORT": "3001",
-    "MONGODB_URI": "@mongodb-uri",
-    "JWT_SECRET": "@jwt-secret",
-    "CORS_ORIGIN": "@cors-origin"
-  }
+  ]
 } 
